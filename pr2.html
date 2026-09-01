@@ -1,0 +1,956 @@
+<!DOCTYPE html>
+<html lang="fa" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>آرایشگاه مردانه لوکس | پیرایش و استایل</title>
+    <!-- فونت فارسی وزیرمتن -->
+    <link href="https://cdn.jsdelivr.net/gh/rastikerdar/vazirmatn@v33.003/Vazirmatn-font-face.css" rel="stylesheet">
+    <style>
+        /* ===== ریست و متغیرها ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        :root {
+            --bg-dark: #0e0e0e;
+            --bg-card: #181818;
+            --bg-section: #111111;
+            --gold: #b48c4e;
+            --gold-light: #d4b483;
+            --text-white: #f5f1e8;
+            --text-gray: #b5afa5;
+            --border-dark: #2a2722;
+            --shadow-gold: 0 8px 25px rgba(180, 140, 78, 0.15);
+            --radius: 18px;
+            --max-width: 1200px;
+            --transition: 0.3s ease;
+            --font: 'Vazirmatn', sans-serif;
+        }
+
+        html {
+            scroll-behavior: smooth;
+            font-size: 16px;
+        }
+
+        body {
+            font-family: var(--font);
+            background-color: var(--bg-dark);
+            color: var(--text-white);
+            line-height: 1.7;
+            overflow-x: hidden;
+            -webkit-font-smoothing: antialiased;
+        }
+
+        .container {
+            width: 92%;
+            max-width: var(--max-width);
+            margin: 0 auto;
+            padding: 0 8px;
+        }
+
+        /* ===== تایپوگرافی ===== */
+        h1, h2, h3, h4 {
+            font-weight: 700;
+            line-height: 1.4;
+            letter-spacing: -0.3px;
+            color: #fff;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            margin-bottom: 1rem;
+            color: #ffffff;
+        }
+
+        h2 {
+            font-size: 1.9rem;
+            margin-bottom: 1.2rem;
+            position: relative;
+            display: inline-block;
+            padding-bottom: 0.6rem;
+        }
+
+        h2::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 55px;
+            height: 3px;
+            background: var(--gold);
+            border-radius: 4px;
+        }
+
+        .section-subtitle {
+            color: var(--text-gray);
+            max-width: 600px;
+            margin-bottom: 2.5rem;
+            font-size: 1.05rem;
+        }
+
+        p {
+            color: var(--text-gray);
+            font-size: 0.95rem;
+        }
+
+        /* ===== دکمه‌ها ===== */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 10px;
+            background: var(--gold);
+            color: #0e0e0e;
+            border: none;
+            padding: 0.8rem 2rem;
+            font-family: var(--font);
+            font-weight: 600;
+            font-size: 0.95rem;
+            border-radius: 40px;
+            cursor: pointer;
+            transition: var(--transition);
+            text-decoration: none;
+            letter-spacing: 0.2px;
+            box-shadow: 0 4px 12px rgba(180, 140, 78, 0.25);
+            border: 1px solid transparent;
+        }
+
+        .btn:hover {
+            background: #cfa668;
+            transform: translateY(-2px);
+            box-shadow: 0 8px 20px rgba(180, 140, 78, 0.35);
+            color: #000;
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--gold);
+            color: var(--gold-light);
+            box-shadow: none;
+        }
+
+        .btn-outline:hover {
+            background: var(--gold);
+            color: #0e0e0e;
+            border-color: var(--gold);
+        }
+
+        /* ===== هدر ===== */
+        .site-header {
+            background: rgba(18, 18, 18, 0.85);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border-bottom: 1px solid var(--border-dark);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            padding: 0.7rem 0;
+            transition: var(--transition);
+        }
+
+        .header-inner {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+
+        .logo-area {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            text-decoration: none;
+        }
+
+        .logo-icon {
+            width: 45px;
+            height: 45px;
+            background: var(--gold);
+            border-radius: 12px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 10px rgba(180, 140, 78, 0.3);
+        }
+
+        .logo-text {
+            font-weight: 800;
+            font-size: 1.3rem;
+            color: #fff;
+            letter-spacing: -0.5px;
+        }
+
+        .logo-text span {
+            color: var(--gold);
+        }
+
+        .main-nav {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .main-nav a {
+            color: #ddd;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 0.95rem;
+            transition: color 0.3s;
+            position: relative;
+        }
+
+        .main-nav a:hover {
+            color: var(--gold-light);
+        }
+
+        .header-actions {
+            display: flex;
+            align-items: center;
+            gap: 1.2rem;
+        }
+
+        .phone-header {
+            direction: ltr;
+            color: var(--gold-light);
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .menu-toggle {
+            display: none;
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 8px;
+            border-radius: 8px;
+        }
+
+        .menu-toggle svg {
+            width: 26px;
+            height: 26px;
+            stroke: #fff;
+        }
+
+        /* ===== هیرو ===== */
+        .hero {
+            display: flex;
+            align-items: center;
+            min-height: 88vh;
+            padding: 3rem 0;
+            background: radial-gradient(circle at 85% 30%, #1e1a14 0%, #0e0e0e 70%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-bg-svg {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 45%;
+            opacity: 0.1;
+            pointer-events: none;
+        }
+
+        .hero-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .hero-text h1 {
+            font-size: 2.8rem;
+            line-height: 1.3;
+            margin-bottom: 1.2rem;
+            background: linear-gradient(135deg, #ffffff 0%, #e0d6c8 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .hero-text h1 .gold-text {
+            background: linear-gradient(135deg, #d4b483, #b48c4e);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .hero-desc {
+            font-size: 1.1rem;
+            color: var(--text-gray);
+            margin-bottom: 2rem;
+            max-width: 450px;
+        }
+
+        .hero-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+
+        .hero-image-wrapper {
+            position: relative;
+            display: flex;
+            justify-content: center;
+        }
+
+        .hero-photo {
+            width: 100%;
+            max-width: 420px;
+            border-radius: 28px;
+            border: 2px solid #2e2a24;
+            box-shadow: 0 25px 50px -10px rgba(0,0,0,0.7);
+            transition: var(--transition);
+            object-fit: cover;
+            aspect-ratio: 4/5;
+        }
+
+        .hero-badge {
+            position: absolute;
+            bottom: -15px;
+            left: 10px;
+            background: var(--bg-card);
+            border: 1px solid var(--gold);
+            padding: 0.6rem 1.3rem;
+            border-radius: 40px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            display: flex;
+            align-items: center;
+            gap: 6px;
+            box-shadow: var(--shadow-gold);
+        }
+
+        /* ===== خدمات ===== */
+        .services-section {
+            padding: 5rem 0;
+            background: var(--bg-section);
+        }
+
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 1.8rem;
+            margin-top: 1rem;
+        }
+
+        .service-card {
+            background: var(--bg-card);
+            border-radius: var(--radius);
+            padding: 2rem 1.5rem;
+            border: 1px solid var(--border-dark);
+            transition: all 0.4s;
+            text-align: center;
+        }
+
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--gold);
+            box-shadow: var(--shadow-gold);
+        }
+
+        .service-icon {
+            width: 70px;
+            height: 70px;
+            background: #1f1b16;
+            border-radius: 18px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.4rem;
+            border: 1px solid #3a332b;
+        }
+
+        .service-card h3 {
+            font-size: 1.3rem;
+            margin-bottom: 0.6rem;
+            color: #fff;
+        }
+
+        .service-card p {
+            font-size: 0.9rem;
+            color: var(--text-gray);
+            line-height: 1.6;
+        }
+
+        /* ===== درباره ما ===== */
+        .about-section {
+            padding: 5rem 0;
+            background: var(--bg-dark);
+        }
+
+        .about-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            align-items: center;
+        }
+
+        .about-image {
+            position: relative;
+            border-radius: var(--radius);
+            overflow: hidden;
+            border: 1px solid var(--border-dark);
+        }
+
+        .about-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            aspect-ratio: 1/1;
+            display: block;
+        }
+
+        .about-values {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            margin-top: 1.5rem;
+        }
+
+        .value-item {
+            background: var(--bg-card);
+            padding: 0.4rem 1.2rem;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: var(--gold-light);
+            border: 1px solid #3a322a;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        /* ===== گالری ===== */
+        .gallery-section {
+            padding: 5rem 0;
+            background: var(--bg-section);
+        }
+
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 1rem;
+            margin-top: 1rem;
+        }
+
+        .gallery-item {
+            border-radius: 14px;
+            overflow: hidden;
+            border: 1px solid var(--border-dark);
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .gallery-item:hover {
+            transform: scale(1.02);
+            border-color: var(--gold);
+        }
+
+        .gallery-item img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            display: block;
+            transition: var(--transition);
+        }
+
+        /* ===== اعتمادسازی ===== */
+        .trust-section {
+            padding: 5rem 0;
+            background: var(--bg-dark);
+        }
+
+        .trust-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+        }
+
+        .trust-card {
+            background: var(--bg-card);
+            padding: 1.8rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-dark);
+            text-align: center;
+        }
+
+        .trust-card svg {
+            margin-bottom: 1rem;
+        }
+
+        .faq-wrapper {
+            margin-top: 3rem;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .faq-item {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            border-radius: 14px;
+            margin-bottom: 0.8rem;
+            padding: 1rem 1.4rem;
+            transition: var(--transition);
+        }
+
+        .faq-item summary {
+            cursor: pointer;
+            font-weight: 600;
+            color: #eee;
+            list-style: none;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none;
+        }
+
+        .faq-item p {
+            margin-top: 0.8rem;
+            font-size: 0.9rem;
+            color: var(--text-gray);
+        }
+
+        .faq-item[open] {
+            border-color: var(--gold);
+            background: #1a1815;
+        }
+
+        /* ===== تماس ===== */
+        .contact-section {
+            padding: 5rem 0;
+            background: var(--bg-section);
+        }
+
+        .contact-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 3rem;
+            margin-top: 1rem;
+        }
+
+        .contact-info {
+            display: flex;
+            flex-direction: column;
+            gap: 1.2rem;
+        }
+
+        .info-row {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            background: var(--bg-card);
+            padding: 1rem 1.4rem;
+            border-radius: 14px;
+            border: 1px solid var(--border-dark);
+            font-size: 0.95rem;
+        }
+
+        .info-row svg {
+            flex-shrink: 0;
+        }
+
+        .contact-form {
+            background: var(--bg-card);
+            padding: 2rem;
+            border-radius: var(--radius);
+            border: 1px solid var(--border-dark);
+        }
+
+        .form-group {
+            margin-bottom: 1.2rem;
+        }
+
+        .form-group input,
+        .form-group textarea {
+            width: 100%;
+            background: #111;
+            border: 1px solid var(--border-dark);
+            border-radius: 10px;
+            padding: 0.9rem 1.2rem;
+            color: #fff;
+            font-family: var(--font);
+            font-size: 0.9rem;
+            transition: border 0.3s;
+        }
+
+        .form-group input:focus,
+        .form-group textarea:focus {
+            outline: none;
+            border-color: var(--gold);
+        }
+
+        .social-links {
+            display: flex;
+            gap: 1rem;
+            margin-top: 0.5rem;
+        }
+
+        .social-links a {
+            background: var(--bg-card);
+            border: 1px solid var(--border-dark);
+            width: 42px;
+            height: 42px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 50%;
+            color: #ccc;
+            transition: var(--transition);
+        }
+
+        .social-links a:hover {
+            border-color: var(--gold);
+            color: var(--gold);
+            transform: translateY(-3px);
+        }
+
+        /* ===== فوتر ===== */
+        .site-footer {
+            background: #0a0a0a;
+            padding: 1.8rem 0;
+            text-align: center;
+            border-top: 1px solid #1f1c18;
+            font-size: 0.85rem;
+            color: #777;
+        }
+
+        /* ===== ریسپانسیو ===== */
+        @media (max-width: 900px) {
+            .hero-content, .about-grid, .contact-grid {
+                grid-template-columns: 1fr;
+                gap: 2.5rem;
+            }
+            .gallery-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            .trust-grid {
+                grid-template-columns: 1fr;
+                gap: 1.2rem;
+            }
+            .hero {
+                min-height: auto;
+                padding: 2.5rem 0;
+            }
+            .hero-text h1 {
+                font-size: 2.2rem;
+            }
+            .main-nav {
+                display: none;
+                position: absolute;
+                top: 70px;
+                right: 0;
+                left: 0;
+                background: #141414;
+                flex-direction: column;
+                padding: 1.5rem;
+                border-bottom: 1px solid var(--border-dark);
+                gap: 1.2rem;
+            }
+            .main-nav.active {
+                display: flex;
+            }
+            .menu-toggle {
+                display: block;
+            }
+            .header-actions .phone-header {
+                display: none;
+            }
+            .services-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        @media (max-width: 550px) {
+            h1 { font-size: 1.9rem; }
+            h2 { font-size: 1.6rem; }
+            .services-grid {
+                grid-template-columns: 1fr;
+            }
+            .gallery-grid {
+                grid-template-columns: 1fr;
+            }
+            .hero-buttons {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            .btn {
+                width: 100%;
+                justify-content: center;
+            }
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            .container {
+                width: 94%;
+                padding: 0 4px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- هدر -->
+    <header class="site-header">
+        <div class="container header-inner">
+            <a href="#" class="logo-area">
+                <div class="logo-icon">
+                    <!-- SVG قیچی و شانه -->
+                    <svg width="28" height="28" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M6 9C7.65685 9 9 7.65685 9 6C9 4.34315 7.65685 3 6 3C4.34315 3 3 4.34315 3 6C3 7.65685 4.34315 9 6 9Z" stroke="#0e0e0e" stroke-width="1.5"/>
+                        <path d="M6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21Z" stroke="#0e0e0e" stroke-width="1.5"/>
+                        <path d="M20 4L8.12 15.88" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M14.45 15.41L20 21" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round"/>
+                        <path d="M8.12 8.12L12 12" stroke="#0e0e0e" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <span class="logo-text">آقای <span>استایل</span></span>
+            </a>
+            <nav>
+                <ul class="main-nav" id="navMenu">
+                    <li><a href="#services">خدمات</a></li>
+                    <li><a href="#about">درباره ما</a></li>
+                    <li><a href="#gallery">نمونه کارها</a></li>
+                    <li><a href="#contact">تماس</a></li>
+                </ul>
+            </nav>
+            <div class="header-actions">
+                <a href="tel:+989123456789" class="phone-header">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                    ۰۹۱۲ ۳۴۵ ۶۷۸۹
+                </a>
+                <button class="menu-toggle" id="menuToggle" aria-label="منو">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><line x1="3" y1="6" x2="21" y2="6"/><line x1="3" y1="12" x2="21" y2="12"/><line x1="3" y1="18" x2="21" y2="18"/></svg>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <!-- هیرو -->
+    <section class="hero">
+        <svg class="hero-bg-svg" viewBox="0 0 400 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="200" cy="200" r="160" stroke="#b48c4e" stroke-width="1.2" stroke-dasharray="8 8"/>
+            <circle cx="200" cy="200" r="110" stroke="#b48c4e" stroke-width="0.8"/>
+            <path d="M80 280 Q200 360 320 280" stroke="#b48c4e" stroke-width="1"/>
+        </svg>
+        <div class="container hero-content">
+            <div class="hero-text">
+                <h1>آرایشگاه مردانه <span class="gold-text">لوکس</span><br>با استاندارد جهانی</h1>
+                <p class="hero-desc">در فضایی شیک و آرام، تخصصی‌ترین خدمات پیرایش و استایل مردانه را تجربه کنید. جایی برای آقایان خوش‌سلیقه.</p>
+                <div class="hero-buttons">
+                    <a href="#contact" class="btn">
+                        رزرو نوبت
+                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><line x1="5" y1="12" x2="19" y2="12"/><polyline points="12 5 19 12 12 19"/></svg>
+                    </a>
+                    <a href="#services" class="btn btn-outline">مشاهده خدمات</a>
+                </div>
+            </div>
+            <div class="hero-image-wrapper">
+                <img class="hero-photo" src="https://images.unsplash.com/photo-1503951914875-452162b0f3f1?q=80&w=1974&auto=format&fit=crop" alt="آرایشگاه مردانه لوکس">
+                <div class="hero-badge">
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5"><path d="M12 2L15 9L22 9L16 14L19 21L12 17L5 21L8 14L2 9L9 9L12 2Z"/></svg>
+                    بیش از ۱۰ سال تجربه
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- خدمات -->
+    <section class="services-section" id="services">
+        <div class="container">
+            <h2>خدمات ما</h2>
+            <p class="section-subtitle">هر آنچه برای استایل بی‌نقص نیاز دارید، در یک مکان حرفه‌ای.</p>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5">
+                            <path d="M6 9C7.65685 9 9 7.65685 9 6C9 4.34315 7.65685 3 6 3C4.34315 3 3 4.34315 3 6C3 7.65685 4.34315 9 6 9Z"/>
+                            <path d="M6 21C7.65685 21 9 19.6569 9 18C9 16.3431 7.65685 15 6 15C4.34315 15 3 16.3431 3 18C3 19.6569 4.34315 21 6 21Z"/>
+                            <path d="M20 4L8.12 15.88" stroke-linecap="round"/>
+                            <path d="M14.45 15.41L20 21" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>کوتاهی مو</h3>
+                    <p>انواع کوتاهی کلاسیک، فید و مدرن با دقت و ظرافت بالا.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5">
+                            <rect x="5" y="3" width="14" height="18" rx="3"/>
+                            <line x1="9" y1="8" x2="15" y2="8"/>
+                            <line x1="9" y1="12" x2="15" y2="12"/>
+                            <line x1="10" y1="16" x2="14" y2="16"/>
+                        </svg>
+                    </div>
+                    <h3>اصلاح ریش</h3>
+                    <p>اصلاح تخصصی با تیغ و حوله گرم، همراه با ماساژ و مراقبت پوست.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5">
+                            <path d="M12 2v20M2 12h20" stroke-linecap="round"/>
+                            <circle cx="12" cy="12" r="4"/>
+                        </svg>
+                    </div>
+                    <h3>رنگ و مش</h3>
+                    <p>رنگ‌های اختصاصی و مش‌های طبیعی برای چهره‌ای جوان‌تر.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon">
+                        <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5">
+                            <path d="M12 2C8 2 5 5 5 9c0 5 7 13 7 13s7-8 7-13c0-4-3-7-7-7z"/>
+                            <circle cx="12" cy="9" r="2.5"/>
+                        </svg>
+                    </div>
+                    <h3>مراقبت پوست</h3>
+                    <p>فیشیال و پاکسازی پوست آقایان با محصولات اورجینال.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- درباره ما -->
+    <section class="about-section" id="about">
+        <div class="container about-grid">
+            <div class="about-image">
+                <img src="https://images.unsplash.com/photo-1585747860715-2ba37e788b70?q=80&w=1974&auto=format&fit=crop" alt="داخل آرایشگاه">
+            </div>
+            <div>
+                <h2>داستان برند</h2>
+                <p style="margin-bottom:1rem;">آرایشگاه آقای استایل در سال ۱۳۹۲ با هدف ارائه خدمات لوکس و باکیفیت برای آقایان خوش‌پوش راه‌اندازی شد. ما معتقدیم آراستگی یک هنر است و هر جلسه پیرایش باید تجربه‌ای لذت‌بخش باشد.</p>
+                <p style="margin-bottom:1.2rem;">تیم ما متشکل از آرایشگران باتجربه و به‌روز است که با جدیدترین متدهای روز دنیا کار می‌کنند. از محیط آرام و موسیقی ملایم تا دقت در جزئیات، همه چیز برای رضایت شما فراهم شده است.</p>
+                <div class="about-values">
+                    <span class="value-item">✨ دقت بالا</span>
+                    <span class="value-item">🤝 احترام به مشتری</span>
+                    <span class="value-item">🌿 محصولات اورجینال</span>
+                    <span class="value-item">⏱️ وقت‌شناسی</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- گالری -->
+    <section class="gallery-section" id="gallery">
+        <div class="container">
+            <h2>نمونه کارها</h2>
+            <p class="section-subtitle">گوشه‌ای از استایل‌هایی که خلق کرده‌ایم.</p>
+            <div class="gallery-grid">
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1622286342621-4bd786c2447c?q=80&w=1974&auto=format&fit=crop" alt="استایل مو"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1599351431202-1e0f0137899a?q=80&w=1974&auto=format&fit=crop" alt="اصلاح ریش"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1593702288056-7927b442d0fa?q=80&w=1974&auto=format&fit=crop" alt="کوتاهی مدرن"></div>
+                <div class="gallery-item"><img src="https://images.unsplash.com/photo-1605497788044-5a32c7078486?q=80&w=1974&auto=format&fit=crop" alt="پیرایش حرفه‌ای"></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- اعتمادسازی -->
+    <section class="trust-section">
+        <div class="container">
+            <h2>چرا آقای استایل؟</h2>
+            <p class="section-subtitle">اعتماد شما، سرمایه ماست.</p>
+            <div class="trust-grid">
+                <div class="trust-card">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5"><path d="M12 2L15 9L22 9L16 14L19 21L12 17L5 21L8 14L2 9L9 9L12 2Z"/></svg>
+                    <h4>کیفیت برتر</h4>
+                    <p>استفاده از بهترین ابزار و محصولات روز دنیا.</p>
+                </div>
+                <div class="trust-card">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>
+                    <h4>وقت‌شناسی</h4>
+                    <p>احترام به زمان شما، بدون معطلی.</p>
+                </div>
+                <div class="trust-card">
+                    <svg width="45" height="45" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5"><path d="M20 6L9 17l-5-5"/></svg>
+                    <h4>ضمانت رضایت</h4>
+                    <p>اگر راضی نبودید، اصلاح مجدد رایگان.</p>
+                </div>
+            </div>
+
+            <!-- سوالات متداول -->
+            <div class="faq-wrapper">
+                <details class="faq-item">
+                    <summary>آیا نیاز به رزرو قبلی هست؟ <span>+</span></summary>
+                    <p>بله، برای ارائه خدمات بهتر پیشنهاد می‌کنیم از قبل تماس بگیرید یا فرم رزرو را پر کنید.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>آیا خدمات اصلاح ریش با تیغ انجام می‌شود؟ <span>+</span></summary>
+                    <p>بله، با رعایت کامل بهداشت و استفاده از تیغ‌های یکبار مصرف.</p>
+                </details>
+                <details class="faq-item">
+                    <summary>ساعت کاری آرایشگاه چگونه است؟ <span>+</span></summary>
+                    <p>شنبه تا پنجشنبه، ۱۰ صبح تا ۹ شب. جمعه‌ها با هماهنگی قبلی.</p>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- تماس -->
+    <section class="contact-section" id="contact">
+        <div class="container">
+            <h2>تماس با ما</h2>
+            <p class="section-subtitle">منتظر حضور گرم شما هستیم.</p>
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <div class="info-row">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        <span>۰۹۱۲ ۳۴۵ ۶۷۸۹</span>
+                    </div>
+                    <div class="info-row">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#b48c4e" stroke-width="1.5"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>
+                        <span>تهران، خیابان ولیعصر، کوچه یاس، پلاک ۱۲</span>
+                    </div>
+                    <div class="social-links">
+                        <a href="#" aria-label="اینستاگرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="4"/><line x1="17.5" y1="6.5" x2="17.5" y2="6.5"/></svg></a>
+                        <a href="#" aria-label="تلگرام"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><path d="M22 2L11 13"/><path d="M22 2L15 22L11 13L2 9L22 2Z"/></svg></a>
+                        <a href="#" aria-label="واتساپ"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><circle cx="12" cy="12" r="10"/><path d="M8 12L11 15L16 9"/></svg></a>
+                    </div>
+                </div>
+                <form class="contact-form" action="#" method="post">
+                    <div class="form-group">
+                        <input type="text" placeholder="نام و نام خانوادگی" required>
+                    </div>
+                    <div class="form-group">
+                        <input type="tel" placeholder="شماره تماس" required>
+                    </div>
+                    <div class="form-group">
+                        <textarea rows="3" placeholder="پیام شما (نوع خدمات، زمان مورد نظر...)" required></textarea>
+                    </div>
+                    <button type="submit" class="btn" style="width:100%; justify-content:center;">ارسال درخواست</button>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- فوتر -->
+    <footer class="site-footer">
+        <div class="container">
+            <p>© ۱۴۰۳ آرایشگاه مردانه آقای استایل — تمامی حقوق محفوظ است.</p>
+        </div>
+    </footer>
+
+    <script>
+        // منوی موبایل
+        const menuToggle = document.getElementById('menuToggle');
+        const navMenu = document.getElementById('navMenu');
+        menuToggle.addEventListener('click', () => {
+            navMenu.classList.toggle('active');
+        });
+
+        // بستن منو با کلیک روی لینک‌ها در موبایل
+        document.querySelectorAll('.main-nav a').forEach(link => {
+            link.addEventListener('click', () => {
+                navMenu.classList.remove('active');
+            });
+        });
+    </script>
+</body>
+</html>
